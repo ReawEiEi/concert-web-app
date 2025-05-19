@@ -1,5 +1,5 @@
 import HistoryTable from "@/components/history/HistoryTable";
 
-export default function AdminHistoryPage() {
+export default function UserHistoryPage() {
     return <HistoryTable />;
 }

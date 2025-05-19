@@ -1,8 +1,10 @@
-export default function AdminHomePage() {
+"use client";
+import OverviewSection from "@/components/home/Overview";
+
+export default function UserHomePage() {
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen p-24">
-            <h1 className="text-4xl font-bold">User Page</h1>
-            <p className="mt-4 text-lg">Welcome to the User page!</p>
+        <div className="py-6 px-4">
+            <OverviewSection />
         </div>
     );
 }

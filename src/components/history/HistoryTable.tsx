@@ -31,24 +31,24 @@ export default function HistoryTable({ isAdmin }: { isAdmin?: boolean }) {
     }
 
     return (
-        <div className="flex flex-col min-h-screen p-10">
+        <div className="flex flex-col min-h-screen p-9">
             {loading ? (
                 <p>Loading...</p>
             ) : (
                 <div className="overflow-x-auto w-full">
-                    <table className="table-auto border-collapse border border-gray-400 w-full">
+                    <table className="table-auto border-collapse border border-gray-400 w-full text-[8px] md:text-base">
                         <thead className="bg-gray-100">
                             <tr>
-                                <th className="border border-gray-400 px-4 py-2 text-left">
+                                <th className="border border-gray-400 px-2 md:px-4 py-1 md:py-2 text-left ">
                                     Date time
                                 </th>
-                                <th className="border border-gray-400 px-4 py-2 text-left">
+                                <th className="border border-gray-400 px-2 md:px-4 py-1 md:py-2 text-left">
                                     Username
                                 </th>
-                                <th className="border border-gray-400 px-4 py-2 text-left">
+                                <th className="border border-gray-400 px-2 md:px-4 py-1 md:py-2 text-left">
                                     Concert name
                                 </th>
-                                <th className="border border-gray-400 px-4 py-2 text-left">
+                                <th className="border border-gray-400 px-2 md:px-4 py-1 md:py-2 text-left">
                                     Action
                                 </th>
                             </tr>
@@ -56,16 +56,16 @@ export default function HistoryTable({ isAdmin }: { isAdmin?: boolean }) {
                         <tbody>
                             {history.map((record, index) => (
                                 <tr key={index}>
-                                    <td className="border border-gray-400 px-4 py-2">
+                                    <td className="border border-gray-400 px-2 md:px-4 py-1 md:py-2">
                                         {formatDate(record.createdAt)}
                                     </td>
-                                    <td className="border border-gray-400 px-4 py-2">
+                                    <td className="border border-gray-400 px-2 md:px-4 py-1 md:py-2">
                                         {record.user.username}
                                     </td>
-                                    <td className="border border-gray-400 px-4 py-2">
+                                    <td className="border border-gray-400 px-2 md:px-4 py-1 md:py-2">
                                         {record.concert.name}
                                     </td>
-                                    <td className="border border-gray-400 px-4 py-2">
+                                    <td className="border border-gray-400 px-2 md:px-4 py-1 md:py-2">
                                         {record.action}
                                     </td>
                                 </tr>

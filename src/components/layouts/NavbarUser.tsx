@@ -22,14 +22,14 @@ export default function NavbarUser() {
         <>
             <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="md:hidden fixed top-4 left-4 z-51 p-2 rounded bg-white shadow border"
+                className="lg:hidden fixed top-4 left-4 z-51 p-2 rounded bg-white shadow border"
             >
                 <IoMenu size={24} />
             </button>
             <div
                 className={`fixed z-50 top-0 h-screen w-60 bg-white border-r flex flex-col justify-between py-10 px-3 transition-transform duration-300 ease-in-out ${
                     isOpen ? "translate-x-0" : "-translate-x-full"
-                } md:translate-x-0`}
+                } lg:translate-x-0`}
             >
                 <div>
                     <h2 className="font-bold text-3xl py-5 px-3">User</h2>
