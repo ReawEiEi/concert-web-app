@@ -46,6 +46,7 @@ export default function AdminHomePage() {
             await createConcert(data);
             showSuccessToast("Created successfully!");
             setTab("overview");
+            setSeats((prev) => prev + data.seat);
         } catch (err) {
             showErrorToast(`Failed to create concert with error: ${err}`);
         }
@@ -98,7 +99,12 @@ export default function AdminHomePage() {
             </div>
 
             {tab === "overview" ? (
-                <OverviewSection type="Admin" />
+                <OverviewSection
+                    type="Admin"
+                    onDeleteSeat={(deletedSeats) =>
+                        setSeats((prev) => prev - deletedSeats)
+                    }
+                />
             ) : (
                 <CreateSection onCreate={handleCreate} />
             )}

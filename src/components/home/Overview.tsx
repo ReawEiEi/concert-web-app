@@ -8,7 +8,13 @@ import deleteConcert from "@/services/concert/deleteConcert";
 import { showSuccessToast, showErrorToast } from "../toast/Success";
 
 //TODO : Make User button
-export default function OverviewSection({ type }: { type: "Admin" | "User" }) {
+export default function OverviewSection({
+    type,
+    onDeleteSeat,
+}: {
+    type: "Admin" | "User";
+    onDeleteSeat?: (seatCount: number) => void;
+}) {
     const [concerts, setConcerts] = useState<ConcertResponse[]>([]);
 
     const [isDeleteModalOpen, setDeleteModalOpen] = useState(false);
@@ -30,6 +36,9 @@ export default function OverviewSection({ type }: { type: "Admin" | "User" }) {
                     )
                 );
                 showSuccessToast("Deleted successfully!");
+                if (onDeleteSeat) {
+                    onDeleteSeat(selectedConcert.seat);
+                }
             } catch (err) {
                 showErrorToast(`Failed to delete concert with error: ${err}`);
             }
