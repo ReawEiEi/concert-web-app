@@ -1,5 +1,5 @@
 "use client";
-import formatDate from "@/app/function/formatDate";
+import formatDate from "@/function/formatDate";
 import { findAllHistory } from "@/services/history/findAllHistory";
 import { findAllHistoryByUserId } from "@/services/history/findAllHistoryByUserId";
 import { HistoryResponse } from "@/types/types";
