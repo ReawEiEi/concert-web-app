@@ -100,7 +100,7 @@ export default function AdminHomePage() {
 
             {tab === "overview" ? (
                 <OverviewSection
-                    type="Admin"
+                    isAdmin
                     onDeleteSeat={(deletedSeats) =>
                         setSeats((prev) => prev - deletedSeats)
                     }

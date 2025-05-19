@@ -9,10 +9,10 @@ import { showSuccessToast, showErrorToast } from "../toast/Success";
 
 //TODO : Make User button
 export default function OverviewSection({
-    type,
+    isAdmin,
     onDeleteSeat,
 }: {
-    type: "Admin" | "User";
+    isAdmin?: boolean;
     onDeleteSeat?: (seatCount: number) => void;
 }) {
     const [concerts, setConcerts] = useState<ConcertResponse[]>([]);
@@ -46,7 +46,7 @@ export default function OverviewSection({
         }
     };
 
-    if (type === "Admin") {
+    if (isAdmin) {
         useEffect(() => {
             const fetchConcerts = async () => {
                 const res = await findAllConcerts();
@@ -72,7 +72,7 @@ export default function OverviewSection({
                                 <FiUser className="mr-1" />
                                 {concert.seat}
                             </div>
-                            {type === "Admin" ? (
+                            {isAdmin ? (
                                 <button
                                     className="bg-[#E84E4E] hover:bg-red-400 text-white px-4 py-2 rounded flex items-center"
                                     onClick={() => openDeleteModal(concert)}

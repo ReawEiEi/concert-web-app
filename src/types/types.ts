@@ -3,5 +3,19 @@ export type ConcertResponse = {
     name: string;
     description: string;
     seat: number;
-    createAt: string;
+    createdAt: string;
+};
+
+export type HistoryResponse = {
+    id: string;
+    user: UserResponse;
+    concert: ConcertResponse;
+    action: string;
+    createdAt: string;
+};
+
+export type UserResponse = {
+    id: string;
+    username: string;
+    createdAt: string;
 };
