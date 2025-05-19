@@ -22,7 +22,6 @@ export default function HistoryTable({ isAdmin }: { isAdmin?: boolean }) {
         useEffect(() => {
             const fetchHistoryByUserId = async (id: string) => {
                 const res = await findAllHistoryByUserId(id);
-                console.log(res);
                 setHistory(res);
                 setLoading(false);
             };
